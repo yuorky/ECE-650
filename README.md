@@ -1,17 +1,13 @@
-# ECE650 : Assignment 3
+# ECE650 : 
 
-Replace FIRST_NAME, LAST_NAME, WATIAM, and STUDENT_ID, EMAIL in
-`user.yml` by your first and last name, WatIAM id, student number, and
-email, respectively. Whenever possible, please use ASCII characters.
+The project is to help the local police department with their installation of security cameras at traffic intersections.
 
-Do not change the format of `user.yml`, except to add the hours
-you spent on finishing the assignment. We will parse it
-automatically. Only enter the information requested.
+The idea is for the police to be able to minimize the number of cameras they need to install, and still be effective as possible with their monitoring.
 
-The main file for your solution to the assignment should be
-`a2ece650.cpp`. You can use `test.cpp` for your unit tests.
+The problem is a optimization problem known as vertex cover problem, the streets were described by undirect graph using vertices and edges; the shortest path between two vertex are find by BFS; IPC (fork-pipe) link the output of random input generator (C++) to the input of the python script, and the output of the python script to the input of the shorest path finder.
 
-You might need to modify `CMakeLists.txt` if you are adding additional
-source files for your code and/or tests.
+The problem can be reduced to solve the minimum vertex cover problem, implement CNF-SAT with a SAT solver(minisat) to solve this problem, compared with APPROX-VC-1 and APPROX-VC-2.
 
-Commit your changes and submit on GitLab.
+A vertex is defined as: 1. each intersection 2.  or the end-point of a line segment of a street that intersects with another street.
+
+An edge between two vertices is defined as: 1. at least one of them is an intersection 2. both lie on the same street 3. one is reachable from the other without traversing another vertex
